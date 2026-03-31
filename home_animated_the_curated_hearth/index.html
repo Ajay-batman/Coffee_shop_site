@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#cfc4c0",
+              "primary-container": "#4e342e",
+              "on-surface-variant": "#504442",
+              "on-primary-fixed-variant": "#5c403a",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f5f5dc",
+              "surface-container-high": "#eaead1",
+              "inverse-surface": "#303221",
+              "primary": "#361f1a",
+              "surface-container": "#efefd7",
+              "surface-tint": "#755750",
+              "tertiary-container": "#403936",
+              "inverse-on-surface": "#f2f2d9",
+              "surface-variant": "#e4e4cc",
+              "secondary": "#5c614a",
+              "primary-fixed": "#ffdad2",
+              "secondary-fixed": "#e1e5c9",
+              "surface-container-highest": "#e4e4cc",
+              "tertiary-fixed": "#ece0dc",
+              "on-error": "#ffffff",
+              "on-tertiary-container": "#aca29f",
+              "on-secondary-fixed": "#191d0c",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#2b1611",
+              "surface-bright": "#fbfbe2",
+              "on-background": "#1b1d0e",
+              "error": "#ba1a1a",
+              "surface": "#fbfbe2",
+              "inverse-primary": "#e5beb5",
+              "surface-dim": "#dbdcc3",
+              "outline": "#827471",
+              "on-tertiary-fixed-variant": "#4c4542",
+              "outline-variant": "#d4c3bf",
+              "on-secondary-fixed-variant": "#444934",
+              "primary-fixed-dim": "#e5beb5",
+              "secondary-container": "#dee2c6",
+              "on-primary-container": "#c19c94",
+              "on-secondary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-primary": "#ffffff",
+              "secondary-fixed-dim": "#c4c9ae",
+              "on-surface": "#1b1d0e",
+              "tertiary": "#292421",
+              "on-tertiary-fixed": "#201a18",
+              "on-secondary-container": "#60654e",
+              "on-error-container": "#93000a",
+              "background": "#fbfbe2"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3 { font-family: 'Noto Serif', serif; }
+
+        /* Reveal Animations */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .parallax-wrapper {
+            overflow: hidden;
+        }
+        .parallax-img {
+            transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+        }
+
+        .hero-text-animate {
+            overflow: hidden;
+            display: inline-block;
+        }
+        .hero-text-animate > span {
+            display: inline-block;
+            transform: translateY(100%);
+            animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        @keyframes slideUp {
+            to { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container overflow-x-hidden">
+<!-- TopAppBar Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbfbe2]/80 dark:bg-[#361f1a]/80 backdrop-blur-md shadow-sm transition-all duration-300">
+<div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
+<a class="text-2xl font-bold font-headline tracking-tight text-[#361f1a] dark:text-[#fbfbe2]" href="index.html">
+                The Curated Hearth
+            </a>
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-[#361f1a] dark:text-[#fbfbe2] border-b-2 border-[#5c614a] pb-1 font-bold font-headline tracking-tight" href="index.html">Home</a>
+<a class="text-[#5c614a] dark:text-[#eaead1] hover:text-[#361f1a] dark:hover:text-[#fbfbe2] transition-colors font-headline tracking-tight" href="..\menu_animated_the_curated_hearth\menu.html">Menu</a>
+<a class="text-[#5c614a] dark:text-[#eaead1] hover:text-[#361f1a] dark:hover:text-[#fbfbe2] transition-colors font-headline tracking-tight" href="..\locations_updated_the_curated_hearth\location.html">Locations</a>
+<a class="text-[#5c614a] dark:text-[#eaead1] hover:text-[#361f1a] dark:hover:text-[#fbfbe2] transition-colors font-headline tracking-tight" href="..\about_us_final_the_curated_hearth\about_us.html">About Us</a>
+</div>
+<div class="flex items-center space-x-6 text-[#361f1a] dark:text-[#fbfbe2]">
+<button class="hover:opacity-80 transition-opacity duration-300">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="hover:opacity-80 transition-opacity duration-300">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-surface">
+<div class="max-w-7xl mx-auto px-8 w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-6 z-10">
+<span class="reveal-on-scroll active text-secondary font-medium tracking-[0.2em] uppercase text-sm mb-4 block">Est. 2024</span>
+<h1 class="text-6xl md:text-8xl text-primary leading-tight mb-8">
+<div class="hero-text-animate"><span>Where every bean</span></div><br/>
+<div class="hero-text-animate" style="animation-delay: 0.2s;"><span>has a <span class="italic">story</span>.</span></div>
+</h1>
+<p class="reveal-on-scroll active text-xl text-on-surface-variant max-w-lg mb-12 font-light leading-relaxed delay-300">
+                        Step into a sanctuary of slow-brewed excellence. We curate world-class harvests and roast them with artisanal precision to bring the warmth of the hearth to your cup.
+                    </p>
+<div class="reveal-on-scroll active flex flex-wrap gap-6 delay-500">
+<a class="bg-primary text-on-primary px-10 py-5 rounded-md text-lg font-semibold shadow-lg hover:scale-95 transition-transform inline-block text-center" href="../menu_animated_the_curated_hearth/menu.html">
+                            Explore Menu
+                        </a>
+<button class="text-primary px-8 py-5 border-b-2 border-surface-variant hover:border-primary transition-all flex items-center gap-2 group">
+                            Our Philosophy <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_right_alt">arrow_right_alt</span>
+</button>
+</div>
+</div>
+<div class="md:col-span-6 relative h-[600px] md:h-[800px] reveal-on-scroll active">
+<div class="absolute inset-0 bg-surface-container-low rounded-xl -rotate-2 scale-105"></div>
+<div class="parallax-wrapper w-full h-full rounded-xl shadow-2xl z-0 overflow-hidden">
+<img alt="Interior" class="parallax-img w-full h-full object-cover" data-alt="Interior of a luxury coffee shop with warm wood tones, brass accents, and soft atmospheric lighting reflecting on leather chairs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeBWQRzp82TSg1zra5itS9H3TAhDk8sAmV9-8-0f2ZMFoEkcSiDHx-3UxqC9W-NdO-rRYGA4r9dR6ZjAK64HkRDA2LyUeK2kP8T-_urep5jSGLLe-5jkxSkrMtLi_hf9tmwJ4JLF6-9Ldk4Wq_oko0mc9Jvgxrcb9B_sn8oljsPJ2bmME4GAPMq3mwHgdRJR0pOAKRiS1SZnPnGXDs2DNqg8Is17dbN9GA0hrnO09fjUHZTPwuXCneyJiTWJeC_AqHc54ijxruwlaT"/>
+</div>
+</div>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute bottom-0 right-0 w-1/3 h-1/2 bg-surface-container opacity-30 -z-10 blur-3xl"></div>
+</section>
+<!-- Today's Special Section -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 reveal-on-scroll">
+<div>
+<h2 class="text-5xl text-primary mb-4">Today's Special Selection</h2>
+<p class="text-secondary font-medium uppercase tracking-widest text-sm">Curated seasonal roast</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="h-[1px] w-24 bg-outline-variant"></span>
+<span class="text-primary italic font-headline">Updated Daily at 7:00 AM</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="bg-surface-container-lowest p-12 rounded-xl flex flex-col md:flex-row gap-12 items-center shadow-sm reveal-on-scroll">
+<div class="w-full md:w-1/2 aspect-square relative overflow-hidden rounded-lg">
+<img alt="Signature Pour Over" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" data-alt="High-end ceramic mug of black coffee sitting on a rustic wooden tray next to fresh roasted beans and a sprig of rosemary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9YVc35YrynZrpRzi1mlQpGw65I5oMmhfiULXHPkpaRpE8_aYrCUDAWiObq5UwMN9Ak9x7m4UY6atrl3duzvVXuf7cH4ttsArsvmWqzJNzzPWbeA9gDAwuW3jlyf2md9-7-Yl3YQZiSCr_y9M9NKSrW9r8zUTneOu5xV1vtEHKmM-0h4CN9ICMaU_Tab_AgLEMRcIOEAv4Xp7S0NgeHgW1n38dDfkvWXN2skpqMhNVNe4oN3NsDWZpkRKDmSwMuDAg_pLUcyK5i7AO"/>
+</div>
+<div class="w-full md:w-1/2">
+<div class="inline-block px-4 py-1 bg-secondary-fixed text-on-secondary-fixed rounded-full text-xs font-bold uppercase tracking-tighter mb-4">Single Origin</div>
+<h3 class="text-3xl text-primary mb-4">Ethiopian Yirgacheffe</h3>
+<p class="text-on-surface-variant mb-6 leading-relaxed">A floral, tea-like profile with distinct notes of jasmine, lemon, and peach. Hand-poured over a slow-drip V60.</p>
+<div class="text-2xl font-headline text-primary mb-8">$6.50</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-3 rounded text-sm font-bold w-full hover:bg-primary transition-colors">
+                                Add to Order
+                            </button>
+</div>
+</div>
+<div class="grid grid-rows-2 gap-8">
+<div class="bg-surface-variant/40 p-8 rounded-xl flex items-center justify-between reveal-on-scroll">
+<div>
+<h4 class="text-xl font-headline text-primary mb-2">Honey Lavender Latte</h4>
+<p class="text-sm text-on-surface-variant">Wildflower honey and dried organic lavender petals.</p>
+</div>
+<div class="text-xl font-headline text-primary">$5.75</div>
+</div>
+<div class="bg-surface-variant/40 p-8 rounded-xl flex items-center justify-between reveal-on-scroll delay-150">
+<div>
+<h4 class="text-xl font-headline text-primary mb-2">The Smoked Mocha</h4>
+<p class="text-sm text-on-surface-variant">House-made dark chocolate with a hint of hickory smoke.</p>
+</div>
+<div class="text-xl font-headline text-primary">$6.25</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Meet Our Baristas (Asymmetric Grid) -->
+<section class="py-24 bg-surface overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+<div class="md:col-span-5 reveal-on-scroll">
+<h2 class="text-5xl text-primary mb-8 leading-tight">Meet the <span class="italic underline decoration-secondary/30">Hands</span> Behind the Hearth</h2>
+<p class="text-lg text-on-surface-variant mb-8 leading-relaxed">
+                            Our baristas aren't just staff; they are sensory experts and craftspeople. Trained in the chemistry of extraction and the art of hospitality, they ensure every pour is a masterpiece.
+                        </p>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="coffee_maker">coffee_maker</span>
+<div>
+<h5 class="font-bold text-primary">SCA Certified Expertise</h5>
+<p class="text-sm text-on-surface-variant">Global standards in every extraction.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="auto_awesome">auto_awesome</span>
+<div>
+<h5 class="font-bold text-primary">Artisanal Flourish</h5>
+<p class="text-sm text-on-surface-variant">Award-winning latte art and flavor pairing.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="md:col-span-7 grid grid-cols-2 gap-6 relative">
+<div class="pt-12 reveal-on-scroll">
+<div class="parallax-wrapper rounded-xl shadow-lg overflow-hidden">
+<img alt="Barista" class="parallax-img w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700" data-alt="Close up of a barista in a dark canvas apron carefully steaming milk with a stainless steel wand, soft steam rising" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASde-qI_VarPpYCQyr5yhFBwJrqCgWzunNaeKoF2IsRPaFK41sZm6uOPaiTUQWzo7SZcl1NPJ1-E2bOOSpqeeQ7rCyPoXQRZHSEQrwVZmsZUdMx7m9xqaWUhBE9TkpMF9XJKA8xM6_xl2Rw_LliibQVTqNROWH_pTJpsMr6luS4uyJ5kGmlQwMOI_68idfH-rFz2_TCG-jvu0OWRI508URxXTUeSvTZmaTaQQEkugyWx6PBSaUjbhhO5w-xLWYk3i8KTfORQB1lTFB"/>
+</div>
+<div class="mt-4">
+<p class="font-headline italic text-primary">Elena V.</p>
+<p class="text-xs uppercase tracking-widest text-secondary">Head Roaster</p>
+</div>
+</div>
+<div class="reveal-on-scroll delay-150">
+<div class="parallax-wrapper rounded-xl shadow-lg overflow-hidden">
+<img alt="Barista" class="parallax-img w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700" data-alt="Focused male barista with tattoos pouring latte art into a ceramic cup, natural morning light through a large window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCudWO0fohh5ggSUYpm_GNwmqxGbLtUswMBkluj-88Pu1NmhsjOsD9hCO2jYy9jNu8bIvSPu14rTtpP6RzJyr67cTAYyapj5bD3DH-ZWg3sJIap5MQchf0cesTncwb8-qz-f6jxRfTZvX74kl3EhEip43lT1V90rdMagA4a3RWadzjZbC00In3NE60Cxmcvdi-Q6GpkiEwLQ6Y2oHgDp6SpwNYxwfyrjW3Dmr0qvva43uQIJH5Lo8HVST0-JlF_UgjRo8dVnNKzexjO"/>
+</div>
+<div class="mt-4 text-right">
+<p class="font-headline italic text-primary">Marcus R.</p>
+<p class="text-xs uppercase tracking-widest text-secondary">Lead Barista</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery / Atmosphere Bento -->
+<section class="py-24 bg-surface-container-high/30">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16 reveal-on-scroll">
+<h2 class="text-5xl text-primary mb-4">A Space to Breathe</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Designed for focus, connection, and the quiet appreciation of a perfect cup.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-[800px]">
+<div class="md:col-span-2 md:row-span-2 overflow-hidden rounded-xl reveal-on-scroll">
+<img alt="Atmosphere" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-alt="Wide angle shot of a cozy cafe interior with warm lights, minimalist furniture, and people reading quietly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl9g89FsbmHpzsLl_8jWkDXBTy9pLgAGG8y4GgDCbTFQiqr0JieOOWsKQuuWGmEjK6gYVPFl5EDA-bYaKFEQOmXA96Tqf6WjMiDtRoaQh7VZxOAJl5WBtnGoRoB6F46_zTMrHUnUeDvtBpbbu5I15vq6hlfKMMSJ6uvofjvcd1kLlNdp4q9AmJnMmOeyG0pA79JpfA9Z7bN85qLuAKq2o9ySRsSz46YDSkhv1zQC-Z1Vfq-WF3z3qMIgWOROnuOBcXGz2xOJCihMz_"/>
+</div>
+<div class="md:col-span-2 overflow-hidden rounded-xl reveal-on-scroll delay-150">
+<img alt="Atmosphere" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-alt="Close up of a rustic table with a stack of old books, a small plant, and a steaming coffee cup in soft evening light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoaeQIeO3zagrpxCwxI8fwAKNH3fBxlJVvpDwQwgNclAezrrIzU6sc56PUXx5dfQSlzS-QaGs4XzAEunZd4zp4JFyy_sQ3ndnOH7aark7KiFOJjuxjyj6wRFMUywhR3xspLyFkMVkJIIJU8B3eCAMtdlAUWXIVBNYNZkLBcgMJ0BD-QtdiC971lhcZFw8y4gqBa2je-nW5Q5_ZQGTvKirg5WX6vQzJda4Yk4u5xl3U7VmDs2P2h1Z7xd8_whnZ3ogh5YJ1w2VfkB4I"/>
+</div>
+<div class="overflow-hidden rounded-xl reveal-on-scroll delay-300">
+<img alt="Atmosphere" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-alt="Macro shot of roasted coffee beans in a burlap sack with high contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhplA5_pqcE7L4AdENYLno_GoNO66_LKUUozcHuJJbP1ufQuFZfZZ6AOfs1uSW7sYbc4gG9l03qJngYE3O_Y9Ww8Qn5HyIsn9wly4O2LMmEnCcuCej9pVLsCpcg_re6_Y0pMFVR1sLEOBCExbCcpbdDtZlynbwWp5JjdijXj7pY_H2i4A3iQZLKXTXr7C0bBrrRJtFtv3cBXFNyZnMKP3Jk6zjBsqJdVTKs4oDQqYGsHTrsRU7i1_AASH4kf6wKbhPpKbjLCCMYvb6"/>
+</div>
+<div class="overflow-hidden rounded-xl reveal-on-scroll delay-450">
+<img alt="Atmosphere" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-alt="Artistic shot of rain on the cafe window with warm golden lights blurred in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzIFzD4k2ISm4fx95QwE2wC1-sRfk-ltbh8qp7r2PZWxLtP-5ZLmTTixQy4FTl4EN4_CYJK9Rt62gqv7tr3N7SDdUCjd4wDv5qE0DMXib09yAMxRdPtCNScmpEO5rrHy6ESpaq_HLDHZTFnq4XUENkL-HogqN1yyZgr62NmNafwUyAGcWAXGghpet1pByTpDz2KEdJhuDGdMHCqTfM1_b6O44ZXzy5X5CUzAOafDSFDNfKOJ0h2zhkhHWi8nS12bRxQRoBK2kI5fEY"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Community -->
+<section class="py-24 bg-primary text-on-primary">
+<div class="max-w-4xl mx-auto px-8 text-center reveal-on-scroll">
+<span class="material-symbols-outlined text-6xl mb-8" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<h2 class="text-4xl md:text-5xl mb-6">Join the Inner Hearth</h2>
+<p class="text-on-primary-container mb-12 text-lg">Subscribers get first access to rare micro-lot releases and exclusive tasting workshops.</p>
+<div class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+<input class="flex-grow bg-primary-container/30 border-none rounded-md px-6 py-4 text-white placeholder:text-on-primary-container focus:ring-2 focus:ring-secondary transition-all" placeholder="Enter your email" type="email"/>
+<button class="bg-secondary-fixed text-on-secondary-fixed px-8 py-4 rounded-md font-bold uppercase tracking-widest text-xs hover:bg-white transition-colors">Subscribe</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f5f5dc] dark:bg-[#1a0f0d] w-full pt-24 pb-12 transition-colors duration-500">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+<div>
+<div class="font-headline italic text-lg text-[#5c614a] mb-6 transition-transform hover:translate-x-1 cursor-default">The Curated Hearth</div>
+<div class="flex flex-col gap-2 mb-6">
+<a class="font-manrope text-sm uppercase tracking-widest text-[#361f1a] dark:text-[#fbfbe2] hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="font-manrope text-sm uppercase tracking-widest text-[#5c614a] dark:text-[#eaead1] hover:text-[#361f1a] transition-colors" href="../menu_animated_the_curated_hearth/menu.html">Menu</a>
+<a class="font-manrope text-sm uppercase tracking-widest text-[#5c614a] dark:text-[#eaead1] hover:text-[#361f1a] transition-colors" href="../locations_updated_the_curated_hearth/location.html">Locations</a>
+<a class="font-manrope text-sm uppercase tracking-widest text-[#5c614a] dark:text-[#eaead1] hover:text-[#361f1a] transition-colors" href="../about_us_final_the_curated_hearth/about_us.html">About Us</a>
+</div>
+<p class="font-manrope text-[10px] uppercase tracking-widest text-[#5c614a] dark:text-[#eaead1]">© 2024 The Curated Hearth. Steeped in Tradition.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h6 class="font-manrope text-sm uppercase tracking-widest font-bold text-[#361f1a] dark:text-[#fbfbe2]">Follow Us</h6>
+<a class="text-[#5c614a] dark:text-[#eaead1] hover:text-[#361f1a] dark:hover:text-white transition-all font-manrope text-sm uppercase tracking-widest hover:translate-x-2 inline-block" href="#">Instagram</a>
+<a class="text-[#5c614a] dark:text-[#eaead1] hover:text-[#361f1a] dark:hover:text-white transition-all font-manrope text-sm uppercase tracking-widest hover:translate-x-2 inline-block" href="#">Facebook</a>
+</div>
+<div class="flex flex-col gap-4">
+<h6 class="font-manrope text-sm uppercase tracking-widest font-bold text-[#361f1a] dark:text-[#fbfbe2]">Visit</h6>
+<p class="text-[#5c614a] dark:text-[#eaead1] font-manrope text-sm uppercase tracking-widest hover:text-primary transition-colors cursor-default">Hours: 7am - 8pm Daily</p>
+<p class="text-[#5c614a] dark:text-[#eaead1] font-manrope text-sm uppercase tracking-widest hover:text-primary transition-colors cursor-default">123 Espresso Lane, Bean City</p>
+<p class="text-[10px] text-[#5c614a] tracking-[0.2em] uppercase mt-4">Est. 1984</p>
+</div>
+</div>
+</footer>
+<!-- FAB -->
+<button class="fixed bottom-8 right-8 bg-primary text-on-primary w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-40 group">
+<span class="material-symbols-outlined" data-icon="coffee">coffee</span>
+<span class="absolute right-20 bg-primary text-on-primary px-4 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Order Now</span>
+</button>
+<script>
+    // Reveal On Scroll Observer
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Parallax and Navbar transition
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        
+        // Parallax Effect
+        document.querySelectorAll('.parallax-img').forEach(img => {
+            const speed = 0.05;
+            img.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+        
+        // Navbar Glass/Size Effect
+        const nav = document.querySelector('nav');
+        if (scrolled > 50) {
+            nav.classList.add('py-2', 'shadow-md');
+            nav.classList.remove('h-20');
+            nav.classList.add('h-16');
+        } else {
+            nav.classList.remove('py-2', 'shadow-md');
+            nav.classList.add('h-20');
+            nav.classList.remove('h-16');
+        }
+    });
+</script>
+</body></html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | The Curated Hearth</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#cfc4c0",
+              "primary-container": "#4e342e",
+              "on-surface-variant": "#504442",
+              "on-primary-fixed-variant": "#5c403a",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f5f5dc",
+              "surface-container-high": "#eaead1",
+              "inverse-surface": "#303221",
+              "primary": "#361f1a",
+              "surface-container": "#efefd7",
+              "surface-tint": "#755750",
+              "tertiary-container": "#403936",
+              "inverse-on-surface": "#f2f2d9",
+              "surface-variant": "#e4e4cc",
+              "secondary": "#5c614a",
+              "primary-fixed": "#ffdad2",
+              "secondary-fixed": "#e1e5c9",
+              "surface-container-highest": "#e4e4cc",
+              "tertiary-fixed": "#ece0dc",
+              "on-error": "#ffffff",
+              "on-tertiary-container": "#aca29f",
+              "on-secondary-fixed": "#191d0c",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#2b1611",
+              "surface-bright": "#fbfbe2",
+              "on-background": "#1b1d0e",
+              "error": "#ba1a1a",
+              "surface": "#fbfbe2",
+              "inverse-primary": "#e5beb5",
+              "surface-dim": "#dbdcc3",
+              "outline": "#827471",
+              "on-tertiary-fixed-variant": "#4c4542",
+              "outline-variant": "#d4c3bf",
+              "on-secondary-fixed-variant": "#444934",
+              "primary-fixed-dim": "#e5beb5",
+              "secondary-container": "#dee2c6",
+              "on-primary-container": "#c19c94",
+              "on-secondary": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-primary": "#ffffff",
+              "secondary-fixed-dim": "#c4c9ae",
+              "on-surface": "#1b1d0e",
+              "tertiary": "#292421",
+              "on-tertiary-fixed": "#201a18",
+              "on-secondary-container": "#60654e",
+              "on-error-container": "#93000a",
+              "background": "#fbfbe2"
+            },
+            fontFamily: {
+              "noto-serif": ["Noto Serif"],
+              "manrope": ["Manrope"],
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Animation Utilities */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .parallax-wrapper {
+            overflow: hidden;
+        }
+        .parallax-img {
+            transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+        }
+        .parallax-wrapper:hover .parallax-img {
+            transform: scale(1.05);
+        }
+
+        @keyframes subtle-float {
+            0%, 100% { transform: translateY(0) rotate(2deg); }
+            50% { transform: translateY(-10px) rotate(3deg); }
+        }
+        .float-animation {
+            animation: subtle-float 6s ease-in-out infinite;
+        }
+
+        .reveal-image-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .reveal-image-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fbfbe2;
+            transform: translateX(0);
+            transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+            z-index: 2;
+        }
+        .reveal-image-container.active::after {
+            transform: translateX(101%);
+        }
+
+        /* Hero text reveal */
+        .hero-text-animate {
+            overflow: hidden;
+        }
+        .hero-text-animate > span {
+            display: inline-block;
+            transform: translateY(100%);
+            animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        @keyframes slideUp {
+            to { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbfbe2]/80 dark:bg-[#361f1a]/80 backdrop-blur-md shadow-sm dark:shadow-none transition-all duration-300">
+<div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
+<a class="text-2xl font-bold font-noto-serif text-[#361f1a] dark:text-[#fbfbe2] hover:opacity-70 transition-opacity" href="#">The Curated Hearth</a>
+<div class="hidden md:flex items-center space-x-8 font-noto-serif tracking-tight"><a class="text-[#5c614a] dark:text-[#eaead1] hover:text-[#361f1a] dark:hover:text-[#fbfbe2] transition-colors relative group" href="#">
+                Home
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+</a>
+<a class="text-[#5c614a] dark:text-[#eaead1] hover:text-[#361f1a] dark:hover:text-[#fbfbe2] transition-colors relative group" href="#">
+                Menu
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+</a>
+<a class="text-[#5c614a] dark:text-[#eaead1] hover:text-[#361f1a] dark:hover:text-[#fbfbe2] transition-colors relative group" href="#">
+                Locations
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+</a>
+<a class="text-[#361f1a] dark:text-[#fbfbe2] border-b-2 border-[#5c614a] pb-1 font-bold" href="#">About Us</a></div>
+<div class="flex items-center space-x-6">
+<button class="hover:opacity-80 transition-opacity duration-300 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[#361f1a] dark:text-[#fbfbe2]" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="hover:opacity-80 transition-opacity duration-300 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[#361f1a] dark:text-[#fbfbe2]" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative py-24 overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center gap-16">
+<div class="w-full md:w-1/2 z-10">
+<span class="reveal-on-scroll inline-block py-1 px-4 bg-secondary-fixed text-on-secondary-fixed rounded-full text-xs font-bold tracking-widest uppercase mb-6 active">Established 2012</span>
+<h1 class="text-6xl md:text-8xl font-headline font-bold text-primary leading-tight mb-8">
+<div class="hero-text-animate"><span>Steeped in</span></div>
+<div class="hero-text-animate" style="animation-delay: 0.2s;"><span class="italic text-secondary font-normal">Tradition</span>.</div>
+</h1>
+<p class="reveal-on-scroll active text-xl text-on-surface-variant max-w-lg leading-relaxed mb-8 delay-300">
+                    Beyond the steam and the grind lies a story of heritage. We believe every cup of coffee is a conversation between the earth and the soul.
+                </p>
+</div>
+<div class="w-full md:w-1/2 relative reveal-on-scroll active">
+<div class="parallax-wrapper aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden shadow-2xl rotate-2 transition-transform duration-700 hover:rotate-0">
+<img alt="Interior of a rustic coffee shop" class="parallax-img w-full h-full object-cover grayscale-[20%]" data-alt="moody high-end coffee shop interior with warm wooden tables, vintage espresso machine, and soft morning light streaming through windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAxtcb-o1aCeMnjskTvUlbCKJoDZGQyrC4pAh6cp3BSMC39_-F2oWjM2IK_Ts47sbfmuBEGj2iMqMfjBwx_o7pqoePece1f-QAzm4g-79t4Yx-crkL3drSTFf4KBUNduYgbufVxhR_lmOjdnSeS4lrECYgvhKABor_G9m9r9zrIb2vUF8GBwZZQWy49D7gLOrSzyVVNvN89SRpV_Qw9cbVO80-ZoDFDwPjNb_as4MnO0CqpM6PKFsePinWEEXW9fIHtwz20ojMtvg1"/>
+</div>
+<div class="float-animation absolute -bottom-10 -left-10 w-48 h-48 bg-surface-container-highest rounded-xl p-4 shadow-xl hidden lg:block">
+<div class="reveal-image-container w-full h-full rounded-lg overflow-hidden active">
+<img alt="Barista at work" class="w-full h-full object-cover" data-alt="close-up of a barista's hands carefully pouring latte art into a ceramic cup in a vintage style kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN5ZCXQ3WWpEDN-LbGmVJn5wQMmTvFnCKSkkfEgCKrCtYDvTJ6katShamNbGaGkbgjffL4zs54nnQ03bVUgWZgeloeDkvOJztA6vAVbY-E-vztWqsfvIy4BiLFKeyx3sNJYk9RtfvnAToSsbQrX5MMAUtJ4d6t96jBgEnqw5zEvSAJrBdJesd1LaxcUjNT29ecRpuiWPLTb_3C2Ifxk0dEKFK_ie9TtpPII9_Zz_C8NEzyotoMC0ALsA_IwQVu58Vr8KQi43keL3cY"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Story (Bento Style) -->
+<section class="py-24 bg-surface-container-low transition-colors duration-1000">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-16 reveal-on-scroll">
+<h2 class="text-4xl font-headline font-bold text-primary mb-4">Our Story</h2>
+<div class="w-24 h-1 bg-secondary opacity-30 origin-left scale-x-0 transition-transform duration-1000 delay-500 reveal-on-scroll-line"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Text Block -->
+<div class="md:col-span-7 flex flex-col justify-center reveal-on-scroll">
+<p class="text-2xl font-headline italic text-on-surface mb-8 leading-relaxed">
+                        "It started with a single cast-iron hearth and a bag of sun-dried beans from the highlands of Ethiopia."
+                    </p>
+<div class="space-y-6 text-on-surface-variant leading-relaxed">
+<p>Founded by Elias and Sarah Thorne, The Curated Hearth was born from a desire to return to the slow, intentional methods of brewing. We didn't want a shop that felt like a factory; we wanted a living room for the neighborhood.</p>
+<p>The name reflects our philosophy: the hearth is the center of the home, a place of warmth and nourishment. We've spent over a decade perfecting the alchemy of the roast, ensuring that the legacy of the farmers is honored in every sip.</p>
+</div>
+</div>
+<!-- Visual Grid -->
+<div class="md:col-span-5 grid grid-cols-2 gap-4">
+<div class="reveal-image-container aspect-square rounded-xl overflow-hidden reveal-on-scroll">
+<img alt="Antique roasting equipment" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" data-alt="vintage copper coffee roaster in a dimly lit warehouse with dust motes dancing in sunbeams" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUdH9djQMfkKYpIZRJDypJdm7DXAAc0IRzAStYgQtLx2WUElhvHmBYumKlxKmB5z_ZPmNn5IWetX5_5sdtDYCO07mnfs80a-aRWM4Hh-W_98sU5vWH_DxJa7XPTZ8hEfL5uej4lxECRvPqvk7yu6oG3kgk2RQmn0JcXajGVYNlwRuX1K4F2OkZy96xsVzzIuXMn6uFxIwr1WNrIP0GlkuzdO1TJ3H4a6ig-IP-BzGOIdt-mkJmnTS53FAxYpcGPwc_PZjJGAo_3rk3"/>
+</div>
+<div class="reveal-image-container aspect-square rounded-xl overflow-hidden mt-8 reveal-on-scroll delay-150">
+<img alt="Coffee shop interior" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" data-alt="nostalgic sepia toned photo of a small town coffee shop front from the early 2000s" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4y2B61DGOfX15xM2Fc7jspThbpG5Xg8DpMEyNh7t2V3UTYs1BvRWT82Xnb6QmZjTtztYU0fTEiH6xukcaRceSgPl4Y6ZitdAg0S3gY3XMZTT1GeUTjAFMUjNzjH-EXGzIm0B5VJT53NPdUl-0OYRODY-pr3LlUvpTz45OH9M1C9QdJSn1o7zsLN7mdFudk8hohWY_4HyvNB6Co5V-8dyN-VBpO78ACgXl4yidD8FqMjeKZXcyLwYHOJOzY8D1u3WwachWy7WOpzRo"/>
+</div>
+<div class="reveal-image-container aspect-square rounded-xl overflow-hidden -mt-8 reveal-on-scroll delay-300">
+<img alt="Outdoor seating" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" data-alt="overhead shot of a rustic wooden cafe table with two espresso cups and an open book" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByVns-ptq5P4Va6diITfjyllFobWE2NCM8dloIbFUwG0sgKcAomtV0s-8ABSDVukYuFEHze3_uZhsoA-h7mljXPGhU4xLFpHncbtWPsvzrRRxT7yjtUFFp2SOJaEJKRWjir8fx_VPbi9BZtJ-pL4IImr0cwKt3whmH927ZpODdvqjvei8lhufNQl2k1YZf8_iIb_YTXHI1ApbwMRJ5cT6CC3suUxSJdG53jt-6lplq4trHbqLg7alLaroDUTWL6pfE_0RVKXSFSFm7"/>
+</div>
+<div class="reveal-image-container aspect-square rounded-xl overflow-hidden reveal-on-scroll delay-450">
+<img alt="Bags of beans" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" data-alt="stacks of burlap sacks filled with green coffee beans in a rustic dry storage room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY5J5d4pjmDjjZwrWOnqQ44AkYTEuGnrSjAasDGlN0oCprXhXlln0ql8-HQkzpV87YeZJKP9gXaE1kJWnJmlv8GtNr7SGn3CqaiOcyQGiQnfnDul_UJBG0IiTsxgX1fG_qFtPbutaZ7Hl254GaCmYmUVu24M2EsGtqeZpczcR9cM-m-jt6Hblvp8hQNsZLNfEA_u7__nd_gmvB_HGMCndrB7g7xs-1pQo4RQT66MqhFsCWI5ewErQ0rU9r8bCfhBTB8IhzPpZ2E4pa"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Philosophy (Tonal Layering Cards) -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-8 text-center mb-20 reveal-on-scroll">
+<h2 class="text-4xl md:text-5xl font-headline font-bold text-primary mb-6">The Bean's Journey</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto uppercase tracking-[0.2em] text-sm">Commitment to Ethical Sourcing &amp; Quality</p>
+</div>
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Card 1 -->
+<div class="group p-8 bg-surface-container-high rounded-xl flex flex-col items-center text-center transition-all duration-500 hover:shadow-xl hover:-translate-y-2 border border-transparent hover:border-outline-variant/20 reveal-on-scroll">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12" data-icon="eco">eco</span>
+<h3 class="text-xl font-headline font-bold text-primary mb-4">Ethical Roots</h3>
+<p class="text-on-surface-variant leading-relaxed">We source directly from small-batch farmers in 14 countries, ensuring every bean provides a living wage for the families who grow them.</p>
+</div>
+<!-- Card 2 -->
+<div class="group p-8 bg-surface-container-high rounded-xl flex flex-col items-center text-center scale-105 shadow-lg border border-outline-variant/10 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 reveal-on-scroll delay-150">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12" data-icon="local_fire_department">local_fire_department</span>
+<h3 class="text-xl font-headline font-bold text-primary mb-4">Precision Roasting</h3>
+<p class="text-on-surface-variant leading-relaxed">Our master roasters treat coffee like fine art. Each batch is small, ensuring we capture the unique profile of the origin without bitterness.</p>
+</div>
+<!-- Card 3 -->
+<div class="group p-8 bg-surface-container-high rounded-xl flex flex-col items-center text-center transition-all duration-500 hover:shadow-xl hover:-translate-y-2 border border-transparent hover:border-outline-variant/20 reveal-on-scroll delay-300">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12" data-icon="groups">groups</span>
+<h3 class="text-xl font-headline font-bold text-primary mb-4">Heart of the City</h3>
+<p class="text-on-surface-variant leading-relaxed">The Hearth is more than a business; it's a hub. We host local poets, musicians, and artists, donating 5% of monthly proceeds to local shelters.</p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24">
+<div class="max-w-7xl mx-auto px-8">
+<div class="relative bg-primary-container rounded-xl overflow-hidden p-12 md:p-24 text-center reveal-on-scroll">
+<!-- Background texture decoration -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 right-0 w-96 h-96 bg-white blur-3xl rounded-full -translate-y-1/2 translate-x-1/2 animate-pulse"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary blur-3xl rounded-full translate-y-1/2 -translate-x-1/2 animate-pulse" style="animation-delay: 2s;"></div>
+</div>
+<div class="relative z-10">
+<h2 class="text-4xl md:text-6xl font-headline font-bold text-on-primary-container mb-8 leading-tight">The kettle is always on. <br/>Join us for a cup.</h2>
+<div class="flex flex-col md:flex-row justify-center items-center gap-6">
+<a class="px-12 py-4 bg-primary text-on-primary rounded-md font-bold text-lg hover:bg-opacity-80 transition-all transform hover:scale-105 active:scale-95 shadow-lg" href="#">Find Your Way Here</a>
+<a class="px-12 py-4 border-b-2 border-on-primary-container text-on-primary-container font-manrope font-bold uppercase tracking-widest text-sm hover:text-white hover:border-white transition-all transform hover:translate-x-2" href="#">View Menu</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f5f5dc] dark:bg-[#1a0f0d] w-full pt-24 pb-12 transition-colors duration-500">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left"><div>
+<span class="font-noto-serif italic text-lg text-[#5c614a] block mb-4 transition-transform hover:translate-x-1">The Curated Hearth</span>
+<p class="font-manrope text-sm uppercase tracking-widest text-[#361f1a] dark:text-[#fbfbe2]">© 2024 The Curated Hearth. Steeped in Tradition.</p>
+</div>
+<div class="flex flex-col space-y-3 font-manrope text-sm uppercase tracking-widest">
+<h6 class="font-bold text-[#361f1a] dark:text-[#fbfbe2] mb-1">Sitemap</h6>
+<a class="text-[#5c614a] dark:text-[#eaead1] hover:text-[#361f1a] dark:hover:text-white transition-all" href="../home_animated_the_curated_hearth/index.html">Home</a>
+<a class="text-[#5c614a] dark:text-[#eaead1] hover:text-[#361f1a] dark:hover:text-white transition-all" href="../menu_animated_the_curated_hearth/menu.html">Menu</a>
+<a class="text-[#5c614a] dark:text-[#eaead1] hover:text-[#361f1a] dark:hover:text-white transition-all" href="../locations_updated_the_curated_hearth/location.html">Locations</a>
+<a class="text-[#361f1a] dark:text-white font-bold underline decoration-[#5c614a]" href="about_us.html">About Us</a>
+</div>
+<div class="flex flex-col space-y-3 font-manrope text-sm uppercase tracking-widest text-[#5c614a] dark:text-[#eaead1]">
+<h6 class="font-bold text-[#361f1a] dark:text-[#fbfbe2] mb-1">Connect</h6>
+<a class="hover:text-[#361f1a] dark:hover:text-white transition-all" href="#">Instagram</a>
+<a class="hover:text-[#361f1a] dark:hover:text-white transition-all" href="#">Facebook</a>
+<span class="mt-2">Hours: 7am - 8pm Daily</span>
+<span>123 Espresso Lane, Bean City</span>
+</div></div>
+</footer>
+<script>
+    // Simple intersection observer for reveal animations
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                
+                // If it's a line, use a specific class
+                if (entry.target.classList.contains('reveal-on-scroll-line')) {
+                    entry.target.classList.remove('scale-x-0');
+                    entry.target.classList.add('scale-x-100');
+                }
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-on-scroll, .reveal-on-scroll-line, .reveal-image-container').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Parallax effect on scroll for specified elements
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        document.querySelectorAll('.parallax-img').forEach(img => {
+            const speed = 0.05;
+            img.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+        
+        // Navbar glass effect transition
+        const nav = document.querySelector('nav');
+        if (scrolled > 50) {
+            nav.classList.add('py-2');
+            nav.classList.remove('h-20');
+            nav.classList.add('h-16');
+        } else {
+            nav.classList.remove('py-2');
+            nav.classList.add('h-20');
+            nav.classList.remove('h-16');
+        }
+    });
+</script>
+</body></html>
